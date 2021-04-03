@@ -9,9 +9,7 @@ def main():
    user_repo = UserRepository(db)
    user_controller = UserController(user_repo)
 
-   user = BlogUser('speed_is_power', 'hammondyouidiot', 3)
-   
-   if user_controller.create_user(user):
+   if user_controller.read_user(3) is not None:
       print('Success')
    else:
       print('Failure')

@@ -29,3 +29,28 @@ class UserRepository:
         except Exception as ex:
             print(ex)
             return False
+
+
+    def select_user(self, id):
+        """
+        Returns User's instance from database with corresponding id.
+        :param id: - int.
+        :return User: - successful select means that there is a record with corresponding id.
+        :return None: - there is no record with that id. 
+        """
+
+        # try:
+        #     with self.__db.connection.cursor() as cursor:
+        #         query = "SELECT * FROM blog_user WHERE id = %d" % id
+        #         self.__db.execute(query)
+
+        #         if self.__db.cursor.rowcount == 1:
+        #             return User.from_dict(self.__db.cursor.fetchone())
+        #         else:
+        #             return None
+        
+        # except Exception as ex:
+        #     print(ex)
+
+    
+    
