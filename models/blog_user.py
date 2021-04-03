@@ -1,5 +1,5 @@
 class BlogUser:
-    __slots__ = ('id', 'creation_date', 'username', 'password', 'profile_id')
+    __slots__ = ('id', 'created_at', 'username', 'password', 'profile_id')
 
     def __init__(
         self,
@@ -7,10 +7,15 @@ class BlogUser:
         password,
         profile_id,
         id = None,
-        creation_date = None
+        created_at = None
     ):
         self.id = id
-        self.creation_date = creation_date
+        self.created_at = created_at
         self.username = username
         self.password = password
         self.profile_id = profile_id
+
+
+    @classmethod
+    def from_dict(cls, data):
+        return BlogUser(**data)

@@ -46,41 +46,7 @@ class DbService:
 
 
 if __name__ == '__main__':
-    db = DbService()
+    print('Launching this file directly isn\'t recommended. Debugging stopped.')
 
 
 
-
-
-# def get_db_connection():
-#        connection = pymysql.connect(
-#         host='127.0.0.1',
-#         user='my_user',
-#         password='3212#Moya3212',
-#         db='test',
-#         charset='utf8mb4',
-#         cursorclass=pymysql.cursors.DictCursor
-#    )
-
-#    return connection
-
-
-
-# def main():
-#    connection = get_db_connection()
-
-#    try:
-#       with connection.cursor() as cursor:
-#          query = "INSERT INTO Person (age, name, surname) VALUES (%d, '%s', '%s')" % (20, 'Stan', 'Lee')
-
-#          cursor.execute(query)
-#          connection.commit()
-#    except Exception as ex:
-#       print(ex)
-#    finally:
-#       connection.close()
-
-
-
-# if __name__  == '__main__':
-#    main()

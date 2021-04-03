@@ -13,10 +13,10 @@ class Post:
         self,
         user_id,
         title,
+        text = None,
         id = None,
         created_at = None,
-        updated_at = None,
-        text = None
+        updated_at = None
     ):
         self.id = id
         self.user_id = user_id
@@ -24,3 +24,8 @@ class Post:
         self.updated_at = updated_at
         self.title = title
         self.text = text
+
+    
+    @classmethod
+    def from_dict(cls, data):
+        return Post(**data)

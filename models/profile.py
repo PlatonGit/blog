@@ -10,14 +10,19 @@ class Profile:
 
     def __init__(
         self,
-        id = None,
         first_name = None,
         second_name = None,
         last_name = None,
-        age = None
+        age = None,
+        id = None
     ):
         self.id = id
         self.first_name = first_name
         self.second_name = second_name
         self.last_name = last_name
         self.age =age
+
+
+    @classmethod
+    def from_dict(cls, data):
+        return Profile(**data)

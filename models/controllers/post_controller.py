@@ -12,13 +12,13 @@ class PostController:
         return self.__post_repo.create_post(post)
 
 
-    def read_post(self):
-        pass
+    def read_post(self, id):
+        return self.__post_repo.select_post(id)
 
 
-    def update_post(self):
-        pass
+    def update_post(self, post):
+        return self.__post_repo.update_post(post)
 
 
-    def delete_post(self):
-        pass
+    def delete_post(self, id):
+        return self.__post_repo.delete_post(id)
