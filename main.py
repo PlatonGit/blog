@@ -2,13 +2,14 @@ from db import DbService
 from models import BlogUser, Profile, Post
 from models.repositories import UserRepository, ProfileRepository, PostRepository
 from models.controllers import UserController, ProfileController, PostController
-from menu import StartMenu
+from menu import StartMenu, MainMenu
 from custom_exceptions import RepositoryError, UserExitException
 
 
 
 def main():
    start_menu = StartMenu()
+   main_menu = MainMenu()
    mode = 'start'
    user = None
 
@@ -17,9 +18,11 @@ def main():
          if mode == 'start':
             user = start_menu.start_logic()
             mode = 'registered'
+
          elif mode == 'registered':
-            print(f'Welcome, {user}!')
-            raise UserExitException()
+            main_menu.main_menu_logic()
+            mode = 'start'
+            
       except UserExitException:
          print('\n\n=================================================\nExiting the programm.\nThank you for using this software and goodbye!')
          exit(0)

@@ -40,7 +40,7 @@ class StartMenu(BaseMenu):
                     password = self.user_text_input('Enter your password (# to cancel): ')
                     if password != '#':
                         if password == user.password:
-                            return  user.username
+                            return  user
                         else:
                             print(f'\nWrong password; attempts left - {login_attempts}.')
                             login_attempts -= 1
@@ -77,7 +77,7 @@ class StartMenu(BaseMenu):
         else:
             return None
 
-        return username
+        return user
 
             
         
